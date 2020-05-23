@@ -7,10 +7,10 @@
 
 const mongoose = require('mongoose');
 const schema = mongoose.Schema({
-  title: { type: 'String', require: true },
-  description: { type: 'String', require: true },
-  ingredients: { type: [], require: true },
-  instructions: { type: [], require: true },
+  title: { type: 'String', required: true },
+  description: { type: 'String', required: true },
+  ingredients: [{ type: 'String', required: true }],
+  instructions: [{ type: 'String', required: true }],
 });
 
 let model = mongoose.model('potions', schema);
