@@ -9,10 +9,10 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema({
   title: { type: 'String', require: true },
   description: { type: 'String', require: true },
-  ingredients: { type: [array], require: true },
-  instructions: { type: [array], require: true },
+  ingredients: { type: [], require: true },
+  instructions: { type: [], require: true },
 });
 
-model = mongoose.model('potions', schema);
+let model = mongoose.model('potions', schema);
 
 module.exports = model;

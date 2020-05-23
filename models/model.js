@@ -7,6 +7,7 @@ class Model {
   async create(cluster) {
     try {
       let clusterToAdd = new this.schema(cluster);
+      console.log('CLUSTER', clusterToAdd);
       return await clusterToAdd.save();
     } catch (e) {
       console.error('muggle error', e);
