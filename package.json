@@ -1,0 +1,32 @@
+{
+  "name": "gitschooled",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --verbose --coverage",
+    "eslint": "**/*.js",
+    "test watch": "jest --watchAll --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GonzoDiamondElephants/gitSchooled.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GonzoDiamondElephants/gitSchooled/issues"
+  },
+  "homepage": "https://github.com/GonzoDiamondElephants/gitSchooled#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.0.1",
+    "mongoose": "^5.9.15"
+  }
+}
