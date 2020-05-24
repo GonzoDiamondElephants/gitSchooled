@@ -22,13 +22,10 @@ mongoose.connection.once('open', () => {
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: true,
 });
 
 // app.use(express.static('./index.html'));
 app.use('/', authRouter);
-
 
 /**
  * This route give us a standard Homepage message

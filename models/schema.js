@@ -1,9 +1,4 @@
 'use strict';
-// one schema name : type string , require unique
-//description: string require
-// ingredients : array of string
-//instruction:  array of string
-//
 
 const mongoose = require('mongoose');
 const schema = mongoose.Schema({
