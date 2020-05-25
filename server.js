@@ -13,6 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 const app = express();
 app.use(cors());
+app.use(express.urlencoded());
 app.use(express.json());
 generateSwagger(app);
 
@@ -42,3 +43,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log('server is up at ', port);
 });
+
+module.exports = {
+  server: app,
+};

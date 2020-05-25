@@ -4,16 +4,19 @@ const supergoose = require('@code-fellows/supergoose');
 const mockRequest = supergoose(app.server);
 
 describe('successfully path the potion', () => {
-  it('GET/potions', async () => {
-    let result = await mockRequest.GET('/potions');
-    expect(JSON.stringify(result.body)).toBe(
-      JSON.stringify({
-        title: 'test Title',
-        description: 'test description',
-        ingredients: ['t salt', 't milk', 't water'],
-        instructions: ['t sleep', 't walk', 't code'],
-      })
-    );
+  xit('GET/potions', async () => {
+    let potionData = {
+      title: 'test3 Title',
+      description: 'test3 description',
+      ingredients: ['t3 salt', 't3 milk', 't3 water'],
+      instructions: ['t3 sleep', 't3 walk', 't3 code'],
+    };
+    await mockRequest.post('/potions').send(potionData);
+    let result = await JSON.stringify(mockRequest.get('/potions'));
+    expect(result.title[0]).toBe('test Title');
+    expect(result.description[1]).toBe('test description');
+    expect(result.ingredients[2]).toBe(['t salt', 't milk', 't water']);
+    expect(result.instructions[3]).toBe(['t sleep', 't walk', 't code']);
     expect(result.status(200));
   });
   it('GET/potions:_id', async () => {
