@@ -4,7 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const generateSwagger = require('./docs/swagger.js');
-
+const notFound = require('./middleware/404.js');
+const serverError = require('./middleware/500.js');
 const authRouter = require('./lib/router.js');
 
 const port = process.env.PORT;
