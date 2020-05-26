@@ -42,13 +42,15 @@ describe('Happy path of CRUD function', () => {
     expect(result).toBeFalsy();
   });
 
-  xit('It can successfully read by Id', async () => {
+  it('It can successfully read by Id', async () => {
     let result = await newModel.create({
-      title: 'test Title',
-      description: 'test description',
-      ingredients: ['t salt', 't milk', 't water'],
-      instructions: ['t sleep', 't walk', 't code'],
+      title: 'test4 Title',
+      description: 'test4 description',
+      ingredients: ['t4 salt', 't4 milk', 't4 water'],
+      instructions: ['t4 sleep', 't4 walk', 't4 code'],
     });
+    console.log('************************');
+    console.log('result' , result);
     let readId = await newModel.readById(result._id);
     expect(readId).toBe({
       title: 'test Title',
@@ -57,14 +59,16 @@ describe('Happy path of CRUD function', () => {
       instructions: ['t sleep', 't walk', 't code'],
     });
   });
-  xit('It can successfully update by Id', async () => {
+  it('It can successfully update by Id', async () => {
     let result = await newModel.create({
-      title: 'test Title',
-      description: 'test description',
-      ingredients: ['t salt', 't milk', 't water'],
-      instructions: ['t sleep', 't walk', 't code'],
+      "title": "test Title",
+      "description": "test description",
+      "ingredients": ["t salt", "t milk", "t water"],
+      "instructions": ["t sleep", "t walk", "t code"],
     });
+    // console.log('result' , result);
     let updated = await newModel.update(result._id);
+    // console.log('the update' , updated);
     expect(updated).toBe(true);
   });
   it('it can successfully delete by Id', async () => {
