@@ -39,11 +39,14 @@ app.get('/', (req, res) => {
   res.status(200);
   res.send(`It's Alivvvvvve`);
 });
+const handleListener = (port) =>{
+  app.listen(port, () => {
+    console.log('server is up at ', port);
+  });
 
-app.listen(port, () => {
-  console.log('server is up at ', port);
-});
+}
 
 module.exports = {
   server: app,
+  start:handleListener,
 };
