@@ -4,7 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const generateSwagger = require('./docs/swagger.js');
-
+const notFound = require('./middleware/404.js');
+const serverError = require('./middleware/500.js');
 const authRouter = require('./lib/router.js');
 
 const port = process.env.PORT;
@@ -12,6 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 const app = express();
 app.use(cors());
+app.use(express.urlencoded());
 app.use(express.json());
 generateSwagger(app);
 
@@ -22,13 +24,10 @@ mongoose.connection.once('open', () => {
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: true,
 });
 
 // app.use(express.static('./index.html'));
 app.use('/', authRouter);
-
 
 /**
  * This route give us a standard Homepage message
@@ -40,7 +39,14 @@ app.get('/', (req, res) => {
   res.status(200);
   res.send(`It's Alivvvvvve`);
 });
+const handleListener = (port) =>{
+  app.listen(port, () => {
+    console.log('server is up at ', port);
+  });
 
-app.listen(port, () => {
-  console.log('server is up at ', port);
-});
+}
+
+module.exports = {
+  server: app,
+  start:handleListener,
+};
