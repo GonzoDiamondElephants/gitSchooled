@@ -8,7 +8,9 @@
     <div id="hogwarts-background">
         <div id="form-wrapper">
           <h1>Tell us your potions</h1>
-          <form>
+
+          <form method="POST" action="http://localhost:3000/potions" >
+
             <label for="wizard-name">Your Name: </label>
             <input type="text" id="wizard-name" name="wizard-name">
             <br>
@@ -41,21 +43,33 @@
 
             <label for="potion-does">Tell us what your potion does: </label>
             <input type="text" id="potion-does" name="potion-does">
-            <br>
+            <br><br>
 
-            <label for="potion-brew">How would one brew up your potion: </label>
-            <input type="text" id="potion-brew" name="potion-brew">
+            <label for="potion-brew">How would one brew up your potion, step by step: </label>
+            <label for="step-one">Step one: </label>
+            <input type="text" id="step-one" name="step-one">
+            <br>
+            <label for="step-two">Step two: </label>
+            <input type="text" id="step-two" name="step-two">
+            <br>
+            <label for="step-three">Step three: </label>
+            <input type="text" id="step-three" name="step-three">
+            <br>
+            <label for="step-four">Step four: </label>
+            <input type="text" id="step-four" name="step-four">
+            <br>
+            <label for="step-five">Step five: </label>
+            <input type="text" id="step-five" name="step-five">
+            <br>
             <br><br>
 
             
-            <a href="FILLER - WILL BE THE SORTING PAGE ROUTE" type="submit" value="Submit" id="myButton">Expecto Applyo</a>
+            <button type="submit" value="Submit" id="myButton">Expecto Submitto</button>
           </form>
         </div>
     </div>
   </body>
   <footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
-    <script src="js/app.js"></script>
+    <script src="./server.js"></script>
   </footer>
 </html>

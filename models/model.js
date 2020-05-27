@@ -7,6 +7,7 @@ class Model {
   async create(cluster) {
     try {
       let clusterToAdd = new this.schema(cluster);
+      console.log('CLUSTER', clusterToAdd);
       return await clusterToAdd.save();
     } catch (e) {
       console.error('muggle error', e);
@@ -28,6 +29,7 @@ class Model {
   async readAll(query) {
     try {
       let result = await this.schema.find(query);
+      console.log('from mongo', result);
       return result;
     } catch (e) {
       console.error('professor snape blew up the dungeon', e);
