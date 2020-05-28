@@ -2,7 +2,7 @@
   "name": "gitschooled",
   "version": "1.0.0",
   "description": ".env file contents:  PORT=3000 MONGODB_URI=mongodb://localhost:27017",
-  "main": "server.js",
+  "main": "index.html",
   "directories": {
     "lib": "lib"
   },
