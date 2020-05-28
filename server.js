@@ -47,8 +47,7 @@ const handleListener = (port) =>{
   app.listen(port, () => {
     console.log('server is up at ', port);
   });
-
-}
+};
 
 module.exports = {
   server: app,
