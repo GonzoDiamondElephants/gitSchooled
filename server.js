@@ -17,6 +17,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 generateSwagger(app);
 
+
 mongoose.connection.once('open', () => {
   console.log('mongo is connected');
 });
@@ -28,6 +29,8 @@ mongoose.connect(MONGODB_URI, {
 
 // app.use(express.static('./index.html'));
 app.use('/', authRouter);
+app.use(express.static('./views'));
+app.set('view engine', 'ejs');
 
 /**
  * This route give us a standard Homepage message
@@ -37,8 +40,9 @@ app.use('/', authRouter);
  */
 app.get('/', (req, res) => {
   res.status(200);
-  res.send(`It's Alivvvvvve`);
+  res.render('index.ejs');
 });
+
 const handleListener = (port) =>{
   app.listen(port, () => {
     console.log('server is up at ', port);
