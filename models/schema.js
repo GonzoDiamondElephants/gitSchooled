@@ -9,5 +9,6 @@ const schema = mongoose.Schema({
 });
 
 let model = mongoose.model('potions', schema);
+console.log('*********Schema.js has been hit************');
 
 module.exports = model;
