@@ -1,8 +1,15 @@
 # gitSchooled
 
-.env file contents: 
-PORT=3000
-MONGODB_URI=mongodb+srv://gitSchooled:hogwarts@gitschooled-nsgoi.mongodb.net/
+#### Authors: 
+Henok Gebremedhn
+Sian Culligan 
+Randee Orion
+
+#### Links and Resources
+- [Github Repo](https://github.com/GonzoDiamondElephants/gitSchooled)
+- [Front end to our DB](https://gitschooledalexaapp.herokuapp.com/)
+- [Swagger Potion-mentation](http://localhost:3000/api-docs)
+
 
 Sources: 
 - [Swagger Docs](https://swagger.io/docs/)
@@ -19,5 +26,19 @@ Sources:
 - [Express API Reference](https://expressjs.com/en/api.html)
 
 
-Docs found here:
-[Swagger Potion-mentation](http://localhost:3000/api-docs)
+
+#### Setup 
+**.env requirements**
+- PORT=3000
+- MONGODB_URI=mongodb+srv://gitSchooled:hogwarts@gitschooled-nsgoi.mongodb.net/
+
+**How to initialize the application**
+- (Front end to our DB)[https://gitschooledalexaapp.herokuapp.com]
+- Insomnia or the like can reach the database with get post put and delete at https://gitschooledalexaapp.herokuapp.com/potions
+- Once the repo is local and all the dependencies are added npm start from the root folder will get the app up and running
+- Last but not least, Alexa can be used to access our database in a fun and interactive way. Simply add 'git schooled' to the approved list for your alexa account. Then simply say Alexa, open git schooled and you are on your way! 
+
+**Tests**
+- To run tests npm test [file name] will run tests once everything is up and running locally 
+
+**UML**
