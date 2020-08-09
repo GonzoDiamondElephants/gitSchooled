@@ -7,8 +7,6 @@ class Model {
   async create(cluster) {
     try {
       let clusterToAdd = new this.schema(cluster);
-      console.log('***********************');
-      console.log('Inside model.js create method')
       console.log('CLUSTER', clusterToAdd);
       return await clusterToAdd.save();
     } catch (e) {
@@ -28,7 +26,8 @@ class Model {
       return false;
     }
   }
-  async readAll(query) {
+  async read(query) {
+    console.log('inside model read function');
     try {
       let result = await this.schema.find(query);
       console.log('from mongo', result);
