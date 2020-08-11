@@ -6,7 +6,7 @@ require('dotenv').config();
 const generateSwagger = require('./docs/swagger.js');
 const notFound = require('./middleware/404.js');
 const serverError = require('./middleware/500.js');
-const authRouter = require('./lib/router.js');
+const modelRouter = require('./lib/routs/model-route.js');
 
 const port = process.env.PORT;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.urlencoded());
 app.use(express.json());
 generateSwagger(app);
-
 
 mongoose.connection.once('open', () => {
   console.log('mongo is connected');
@@ -28,7 +27,9 @@ mongoose.connect(MONGODB_URI, {
 });
 
 // app.use(express.static('./index.html'));
-app.use('/', authRouter);
+
+app.use('/', modelRouter);
+
 app.use(express.static('./views'));
 app.set('view engine', 'ejs');
 
@@ -43,7 +44,7 @@ app.get('/', (req, res) => {
   res.render('index.ejs');
 });
 
-const handleListener = (port) =>{
+const handleListener = (port) => {
   app.listen(port, () => {
     console.log('server is up at ', port);
   });
@@ -51,5 +52,5 @@ const handleListener = (port) =>{
 
 module.exports = {
   server: app,
-  start:handleListener,
+  start: handleListener,
 };
