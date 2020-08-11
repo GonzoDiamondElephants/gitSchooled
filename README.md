@@ -1,48 +1,46 @@
 # gitSchooled
 
-.env file contents:
-PORT=3000
-MONGODB_URI=mongodb+srv://gitSchooled:hogwarts@gitschooled-nsgoi.mongodb.net/
+#### Authors: 
+Henok Gebremedhn
+Sian Culligan 
+Randee Orion
 
-Sources:
-[Swagger Docs](https://swagger.io/docs/)
+#### Links and Resources
+- [Github Repo](https://github.com/GonzoDiamondElephants/gitSchooled)
+- [Front end to our DB](https://gitschooledalexaapp.herokuapp.com/)
+- [Swagger Potion-mentation](http://localhost:3000/api-docs)
 
-Docs found here:
-[Swagger Potion-mentation](http://localhost:3000/api-docs)
 
-## Project Name : git-sirius
+Sources: 
+- [Swagger Docs](https://swagger.io/docs/)
+- [Adding Sounds Effects with the help of a 6th grader](https://www.awesomeaariv.com/how-to-add-sound-effects-to-your-alexa-skill/01/17/2019/)
+- [Echo Demo Code](https://github.com/AlwaysBCoding/Episodes/edit/master/amazon-echo/lambda-function.js)
+- [Weather API](https://darksky.net/dev/docs#data-point)
+- [Tooltip Functionality](https://www.w3schools.com/css/css_tooltip.asp)
+- [Sounds](https://developer.amazon.com/en-US/docs/alexa/custom-skills/ask-soundlibrary.html)
+- [Lambda Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html)
+- [Alexa Skill Tutorial 1](https://developer.amazon.com/blogs/alexa/post/de130c67-0703-4480-a2b3-c9f2977a7dd6/how-to-build-an-alexa-game-skill-from-scratch)
+- [Alexa Skill Tutorial 2](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/get-deeper/tutorials-code-samples/build-an-engaging-alexa-skill)
+- [Alexa Skill Tutorial 3](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/get-deeper/tutorials-code-samples/build-an-engaging-alexa-skill/module-1)
+- [Hello World Demo Code](https://github.com/alexa/skill-sample-nodejs-hello-world)
+- [Express API Reference](https://expressjs.com/en/api.html)
 
-### Author: Sian , Randee and Henok.
 
-### Links and Resources
 
-- [submission PR]()
-- [heroku]()
-- [netlify]()
+#### Setup 
+**.env requirements**
+- PORT=3000
+- MONGODB_URI=mongodb+srv://gitSchooled:hogwarts@gitschooled-nsgoi.mongodb.net/
 
-### DOCUMENTATION
+**How to initialize the application**
+- [Front end to our DB](https://gitschooledalexaapp.herokuapp.com)
+- Insomnia or the like can reach the database with get post put and delete at https://gitschooledalexaapp.herokuapp.com/potions
+- Once the repo is local and all the dependencies are added npm start from the root folder will get the app up and running
+- Last but not least, Alexa can be used to access our database in a fun and interactive way. Simply add 'git schooled' to the approved list for your alexa account. Then simply say Alexa, open git schooled and you are on your way! 
 
-[Swagger Hub]()
-[npm publish]()
+**Tests**
+- To run tests npm test [file name] will run tests once everything is up and running locally 
 
-### Setup
+**UML**
+[uml](devPhases.pdf)
 
-#### `.env` requirements (where applicable)
-
-- `PORT` - json-server --watch ./data/db || atlas
-
-#### How to initialize/run your application (where applicable)
-
-- nodemon to restart the server.
-- Once it's restart enter localhost on the browser .
-- all roles have there on capabilities, by knowing the right route . you can access the right role and capabilities .
-
-#### Tests
-
-- unit tests: 'npm test'
-- lint test: 'npm run lint'
-- nodemon: server refresh
-
-#### UML
-
-![UML Diagram]()
