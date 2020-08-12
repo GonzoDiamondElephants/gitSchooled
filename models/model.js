@@ -27,7 +27,6 @@ class Model {
     }
   }
   async read(query) {
-    console.log('inside model read function');
     try {
       let result = await this.schema.find(query);
       console.log('from mongo', result);

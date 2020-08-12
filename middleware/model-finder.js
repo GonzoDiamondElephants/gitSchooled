@@ -8,11 +8,10 @@ const modelFinder = (req, res, next) => {
   switch (req.params.model) {
     case 'student':
       req.collectionModel = new Model(studentSchema);
+      console.log('student case', req.collectionModel);
       break;
     case 'potions':
       req.collectionModel = new Model(potionSchema);
-      console.log('potions case', req.collectionModel);
-
       break;
     default:
       res.status(404);
