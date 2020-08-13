@@ -9,6 +9,9 @@ const modelFinder = (req, res, next) => {
     case 'student':
       req.collectionModel = new Model(studentSchema);
       break;
+    // case 'message':
+    //   req.collectionModel = new Model();
+    //   break;
     case 'potions':
       req.collectionModel = new Model(potionSchema);
       console.log('potions case', req.collectionModel);
