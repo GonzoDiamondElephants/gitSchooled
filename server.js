@@ -37,7 +37,7 @@ mongoose.connect(MONGODB_URI, {
 
 // app.use(express.static('./index.html'));
 
-app.use('/', modelRouter);
+app.use('/api/vi', modelRouter);
 // app.use(jwt);
 app.use(express.static('./views'));
 
