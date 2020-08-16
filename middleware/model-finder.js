@@ -6,18 +6,20 @@ const Model = require('../models/model.js');
 console.log('model finder middler ware');
 const modelFinder = (req, res, next) => {
   switch (req.params.model) {
-    case 'student':
-      req.collectionModel = new Model(studentSchema);
-      break;
-    case 'potions':
-      req.collectionModel = new Model(potionSchema);
-      console.log('potions case', req.collectionModel);
+  case 'student':
+    req.collectionModel = new Model(studentSchema);
+    console.log('', req.collectionModel);
+    next();
+    break;
+  case 'potions':
+    req.collectionModel = new Model(potionSchema);
+    next();
+    break;
 
-      break;
-    default:
-      res.status(404);
-      res.end();
-      break;
+  default:
+    res.status(404);
+    res.end();
+    break;
   }
   next();
 };

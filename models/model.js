@@ -7,13 +7,27 @@ class Model {
   async create(cluster) {
     try {
       let clusterToAdd = new this.schema(cluster);
-      console.log('CLUSTER', clusterToAdd);
       return await clusterToAdd.save();
     } catch (e) {
       console.error('muggle error', e);
       return false;
     }
   }
+  ////////////////////////////*****************TO USE IT FOR AUTH0 USER NAME.*/
+  async readBySub(sub) {
+    try {
+      let record = await this.schema.findOne({ sub });
+
+      return record;
+    } catch (e) {
+      console.error(
+        'house elves went on a strike , could not find your potion!!',
+        e
+      );
+      return false;
+    }
+  }
+  //////////////////////////****************** */
   async readById(_id) {
     try {
       let record = await this.schema.findOne({ _id });
@@ -27,10 +41,9 @@ class Model {
     }
   }
   async read(query) {
-    console.log('inside model read function');
     try {
       let result = await this.schema.find(query);
-      console.log('from mongo', result);
+
       return result;
     } catch (e) {
       console.error('professor snape blew up the dungeon', e);
