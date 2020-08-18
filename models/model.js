@@ -16,8 +16,8 @@ class Model {
   ////////////////////////////*****************TO USE IT FOR AUTH0 USER NAME.*/
   async readBySub(sub) {
     try {
-      let record = await this.schema.findOne({ sub });
-
+      let record = await this.schema.find({ sub });
+      console.log('record', record);
       return record;
     } catch (e) {
       console.error(

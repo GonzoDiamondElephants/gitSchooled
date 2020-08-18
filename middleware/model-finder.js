@@ -21,6 +21,5 @@ const modelFinder = (req, res, next) => {
     res.end();
     break;
   }
-  next();
 };
 module.exports = modelFinder;
