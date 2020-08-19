@@ -9,6 +9,7 @@ const schema = mongoose.Schema({
   foe: { type: 'String', require: false },
   patronus: { type: 'String', require: false },
   gringCoin: { type: Number, require: false },
+  picture: { type: 'String', required: false},
   sub: { type: 'String', unique: true, require: true },
   // roles: {
   //   type: 'string',
