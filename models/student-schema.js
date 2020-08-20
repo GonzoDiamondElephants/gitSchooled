@@ -9,14 +9,10 @@ const schema = mongoose.Schema({
   foe: { type: 'String', require: false },
   patronus: { type: 'String', require: false },
   gringCoin: { type: Number, require: false },
-  picture: { type: 'String', required: false},
+  picture: { type: 'String', required: false },
   sub: { type: 'String', unique: true, require: true },
-  // roles: {
-  //   type: 'string',
-  //   require: true,
-  //   default: 'prefect',
-  //   enum: ['supremeMugwump', 'prefect', 'squib'],
-  // },
+  houseDescription: { type: String, required: false },
+  houseIcon: { type: String, required: false },
 });
 
 let model = mongoose.model('students', schema);
